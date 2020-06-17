@@ -7,7 +7,7 @@ import {
 const IndexPage = () => {
   return (
     <HomeContainer>
-
+      
     </HomeContainer>
   )
 }
