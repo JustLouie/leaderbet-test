@@ -16,6 +16,29 @@ import {
   Table
 } from 'src/styles/Home.style'
 
+const gameCardData = [
+  {
+    prize: 5000,
+    prise: 5,
+    maxPlayer: 5,
+  },
+  {
+    prize: 5000,
+    prise: 5,
+    maxPlayer: 5,
+  },
+  {
+    prize: 5000,
+    prise: 5,
+    maxPlayer: 5,
+  },
+  {
+    prize: 5000,
+    prise: 5,
+    maxPlayer: 5,
+  }
+]
+
 
 const IndexPage = () => {
   return (
@@ -47,35 +70,62 @@ const IndexPage = () => {
         </GamesNavigation>
 
         <Games>
-          <GameCard>
-            <TotalPlayer>
-              5 კაციანი
-            </TotalPlayer>
-            <GamePrize>
-              <h2>
-                5000 <span>gel</span>
-              </h2>
-              <p>მაქს. მოგება</p>
-            </GamePrize>
-            <PlayerNow>
-              <img src='/img/person.svg' />
-              <img src='/img/person.svg' />
-              <img src='/img/person.svg' />
-              <img src='/img/person.svg' />
-              <img src='/img/person.svg' />
-            </PlayerNow>
-            <GamePrice>
-              5 ლარი
-            </GamePrice>
-            <GameRegistration>
-              რეგისტრაცია
-            </GameRegistration>
-          </GameCard>
+          {
+            gameCardData.map(game => (
+              <GameCard>
+                <TotalPlayer className='with-dotted-underline'>
+                  ${game.maxPlayer} კაციანი
+                </TotalPlayer>
+                <GamePrize>
+                  <h2>
+                    <strong>${game.prize}</strong> 
+                    <span>gel</span>
+                  </h2>
+                  <p>მაქს. მოგება</p>
+                </GamePrize>
+                <PlayerNow>
+                  <img src='/img/person.svg' />
+                  <img src='/img/person.svg' />
+                  <img src='/img/personblack.svg' />
+                  <img src='/img/personblack.svg' />
+                  <img src='/img/personblack.svg' />
+                </PlayerNow>
+                <GamePrice>
+                  ${game.price} ლარი
+                </GamePrice>
+                <GameRegistration>
+                  რეგისტრაცია
+                </GameRegistration>
+              </GameCard>
+            ))
+          }
+          
         </Games>
 
         <InformationTable>
           <InformationNav>
-
+            <ul>
+              <li>
+                <button>
+                  ტოპ მოგებები
+                </button>
+              </li>
+              <li>
+                <button>
+                  ლიდერბორდი
+                </button>
+              </li>
+              <li>
+                <button>
+                  ისტორია
+                </button>
+              </li>
+              <li>
+                <button>
+                  წესები
+                </button>
+              </li>
+            </ul>
           </InformationNav>
           <Table>
 
