@@ -14,11 +14,7 @@ export const HomeGames = styled.div`
   display: grid;
   grid-row-gap: 10px;
 `
-export const HomeSidebar = styled.div`
-  width: 100%;
-  height: 100px;
-  background: white;
-`
+
 
 export const GamesNavigation = styled.div`
   width: 100%;
@@ -174,3 +170,96 @@ export const InformationNav = styled.div`
     }
   }
 `
+
+export const HomeSidebar = styled.div`
+  width: 100%;
+  height: 100px;
+  background: white;
+`
+
+export const UserInfo = styled.div`
+  padding: 60px 24px;
+  padding-bottom: 20px;
+  background-color: #3B354A;
+  position: relative;
+  display: grid;
+  grid-row-gap: 16px;
+  justify-items: center;
+
+
+  h1 {
+    font-size: 16px;
+    color: white;
+    margin: 0px;
+  }
+`
+
+export const UserHistory = styled.button`
+  border: 1px solid #60667E;
+  outline: none;
+  font-size: 14px;
+  padding: 8px 10px;
+  background: transparent;
+  border-radius: 18px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  color: #C5D8F9;
+  font-size: 14px;
+  
+  img {
+    margin-right: 16px;
+  }
+`
+
+export const UserPriceTemplate = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 10px;
+  padding: 13px 16px;
+  color: white;
+  border-radius: 27px;
+
+  p,span {
+    font-size: 15px;
+    color: white;
+    margn: 0px;
+  }
+
+  span {
+    justify-selft: end;
+  }
+
+
+`
+
+export const UserPrices = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(2, 48px);
+  grid-row-gap: 10px;
+`
+
+export const UserBalance = styled(UserPriceTemplate)`
+  background-color: #6E717E;
+
+`
+
+export const UserSpins = styled(UserPriceTemplate)`
+  background-color: #217C8B;
+`
+
+export const UserImg = styled.div`
+  width: 119px;
+  height: 119px;
+  border: 8px solid #217C8B;
+  background-color: #5F39B7;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+

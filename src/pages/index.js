@@ -12,7 +12,13 @@ import {
   GamePrice,
   GameRegistration,
   InformationTable,
-  InformationNav
+  InformationNav,
+  UserInfo,
+  UserHistory,
+  UserPrices,
+  UserBalance,
+  UserSpins,
+  UserImg
 } from 'src/styles/Home.style'
 
 import { InfoTable } from 'src/components/Table'
@@ -132,6 +138,29 @@ const IndexPage = () => {
         </InformationTable>
       </HomeGames>
       <HomeSidebar>
+
+          <UserInfo>
+            <UserHistory>
+              <img src='/img/time.svg' />
+              ისტორია
+            </UserHistory>
+            <UserImg>
+              <img src='/img/logo.svg' />
+            </UserImg>
+            <h1>Muscul Bones</h1>
+            <UserPrices>
+              <UserBalance>
+                <img src='/img/coins.svg' />
+                <p>ბალანსი</p>
+                <span>995.65 GEL</span>
+              </UserBalance>
+              <UserSpins>
+                <img src='/img/dollar.svg' />
+                <p>უფასო სპინები</p>
+                <span>18 GEL</span>
+              </UserSpins>
+            </UserPrices>
+          </UserInfo>
 
       </HomeSidebar>
     </HomeContainer>
