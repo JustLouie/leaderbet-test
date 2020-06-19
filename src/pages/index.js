@@ -22,15 +22,19 @@ import {
 
 import { InfoTable } from 'src/components/Table'
 import GameCard from 'src/components/Widgets/GameCard'
+import GameCardRegistered from 'src/components/Widgets/GameCardRegistered'
 
 
 const IndexPage = () => {
 
   const state = useSelector(state => state.home)
-  const { cards } = state
+  const { cards, registerView } = state
 
   return (
     <HomeContainer>
+      {
+        registerView && <HomeOverlay />
+      }
       <HomeGames>
         <GamesNavigation>
           <ul>
@@ -59,9 +63,18 @@ const IndexPage = () => {
 
         <Games>
           {
-            cards.map(game => (
-              <GameCard key={game.id} data={game} />
-            ))
+            cards.map(game => {
+              if (game.registered){
+                return (
+                  <GameCardRegistered key={game.id} data={game} />
+                )
+              }
+
+              return (
+                <GameCard key={game.id} data={game} />
+
+              )
+            })
           }
           
         </Games>
