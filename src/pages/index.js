@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useSelector } from 'react-redux'
 import {
   HomeContainer,
   HomeOverlay,
@@ -6,12 +7,6 @@ import {
   HomeSidebar,
   GamesNavigation,
   Games,
-  GameCard,
-  TotalPlayer,
-  GamePrize,
-  PlayerNow,
-  GamePrice,
-  GameRegistration,
   InformationTable,
   InformationNav,
   UserInfo,
@@ -26,53 +21,13 @@ import {
 } from 'src/styles/Home.style'
 
 import { InfoTable } from 'src/components/Table'
-
-const gameCardData = [
-  {
-    prize: 5000,
-    price: 5,
-    maxPlayer: 5,
-  },
-  {
-    prize: 5000,
-    price: 5,
-    maxPlayer: 5,
-  },
-  {
-    prize: 5000,
-    price: 5,
-    maxPlayer: 5,
-  },
-  {
-    prize: 5000,
-    price: 5,
-    maxPlayer: 5,
-  },
-  {
-    prize: 5000,
-    price: 5,
-    maxPlayer: 5,
-  },
-  {
-    prize: 5000,
-    price: 5,
-    maxPlayer: 5,
-  },
-  {
-    prize: 5000,
-    price: 5,
-    maxPlayer: 5,
-  },
-  {
-    prize: 5000,
-    price: 5,
-    maxPlayer: 5,
-  },
-]
+import GameCard from 'src/components/Widgets/GameCard'
 
 
 const IndexPage = () => {
 
+  const state = useSelector(state => state.home)
+  const { cards } = state
 
   return (
     <HomeContainer>
@@ -104,32 +59,8 @@ const IndexPage = () => {
 
         <Games>
           {
-            gameCardData.map(game => (
-              <GameCard>
-                <TotalPlayer className='with-dotted-underline' dotColor='#FFD919'>
-                  {game.maxPlayer} კაციანი
-                </TotalPlayer>
-                <GamePrize>
-                  <h2>
-                    <strong>{game.prize}</strong> 
-                    <span>gel</span>
-                  </h2>
-                  <p>მაქს. მოგება</p>
-                </GamePrize>
-                <PlayerNow>
-                  <img src='/img/person.svg' />
-                  <img src='/img/person.svg' />
-                  <img src='/img/personblack.svg' />
-                  <img src='/img/personblack.svg' />
-                  <img src='/img/personblack.svg' />
-                </PlayerNow>
-                <GamePrice>
-                  {game.price} ლარი
-                </GamePrice>
-                <GameRegistration>
-                  რეგისტრაცია
-                </GameRegistration>
-              </GameCard>
+            cards.map(game => (
+              <GameCard key={game.id} data={game} />
             ))
           }
           
