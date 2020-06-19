@@ -12,9 +12,10 @@ import {
   GamePrice,
   GameRegistration,
   InformationTable,
-  InformationNav,
-  Table
+  InformationNav
 } from 'src/styles/Home.style'
+
+import { InfoTable } from 'src/components/Table'
 
 const gameCardData = [
   {
@@ -127,6 +128,7 @@ const IndexPage = () => {
               </li>
             </ul>
           </InformationNav>
+          <InfoTable />
         </InformationTable>
       </HomeGames>
       <HomeSidebar>

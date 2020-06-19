@@ -6,6 +6,7 @@ export const HomeContainer = styled.div`
   grid-template-columns: 7fr 2fr;
   grid-column-gap: 10px;
   width: 100%;
+  padding-bottom: 56px;
 `
 
 export const HomeGames = styled.div`

@@ -4,6 +4,7 @@ import { GlobalStyle } from './Global.style'
 import { Container } from './Layout.style'
 import Header from 'src/components/Header'
 import primaryTheme from './themes/primaryTheme'
+import 'src/assets/index.scss'
 
 export default (props) => {
   return (
