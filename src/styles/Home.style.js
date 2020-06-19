@@ -263,3 +263,76 @@ export const UserImg = styled.div`
 `
 
 
+export const TopSpins = styled.div`
+  width: 100%;
+  padding: 10px;
+  padding-top: 30px;
+  background-color: #35364A;
+
+  h1 {
+    font-size: 15px;
+    color: #CAD0F1;
+    margin-bottom: 23px;
+  }
+`
+
+export const Spins = styled.div`
+  display: grid;
+  grid-row-gap: 10px;
+  
+`
+
+export const SpinItem = styled.div`
+  padding: 10px 19px;
+  background-color: #444563;
+  border-radius: 5px;
+  position: relative;
+  
+  p {
+    margin: 0px;
+  }
+
+  p.date {
+    position: absolute;
+    font-size: 15px;
+    color: rgba(255,255,255,0.5);
+    right: 10px;
+    top: 10px;
+
+    img {
+      margin-right: 11px;
+    }
+    span {
+      margin-left: 16px;
+      display: inline-block;
+    }
+  }
+
+  h3 {
+    color: #39B7FF;
+    margin: 0px;
+    strong {
+      font-size: 37px;
+    }
+    span {
+      margin-left: 6px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+
+  p.users {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 7px;
+    font-size: 15px;
+    color: white;
+  }
+
+  p.koef {
+    color: #D2EFFF;
+    font-size: 18px;
+    margin-top: 7px;
+  }
+
+`

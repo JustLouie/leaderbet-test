@@ -18,7 +18,10 @@ import {
   UserPrices,
   UserBalance,
   UserSpins,
-  UserImg
+  UserImg,
+  TopSpins,
+  Spins,
+  SpinItem
 } from 'src/styles/Home.style'
 
 import { InfoTable } from 'src/components/Table'
@@ -161,6 +164,71 @@ const IndexPage = () => {
               </UserSpins>
             </UserPrices>
           </UserInfo>
+
+          <TopSpins>
+            <h1 classNme='with-dotted-underline pink'>
+              ტოპ სპინები
+            </h1>
+            <Spins>
+              <SpinItem>
+                <p className='date'>
+                  <img src='/img/time.svg' />
+                  23.04.19 20:33
+                </p>
+                <h3>
+                  <strong>5000</strong>
+                  <span>gel</span>
+                </h3>
+                <p className='users'>
+                  <img src='/img/person.svg' />
+                  <span>
+                    ნოდარა, ელდარა, ემზარა
+                  </span>
+                </p>
+                <p className='koef'>
+                  1000 X 2
+                </p>
+              </SpinItem>
+              <SpinItem>
+                <p className='date'>
+                  <img src='/img/time.svg' />
+                  23.04.19 20:33
+                </p>
+                <h3>
+                  <strong>5000</strong>
+                  <span>gel</span>
+                </h3>
+                <p className='users'>
+                  <img src='/img/person.svg' />
+                  <span>
+                    ნოდარა, ელდარა, ემზარა
+                  </span>
+                </p>
+                <p className='koef'>
+                  1000 X 2
+                </p>
+              </SpinItem>
+              <SpinItem>
+                <p className='date'>
+                  <img src='/img/time.svg' />
+                  23.04.19 20:33
+                </p>
+                <h3>
+                  <strong>5000</strong>
+                  <span>gel</span>
+                </h3>
+                <p className='users'>
+                  <img src='/img/person.svg' />
+                  <span>
+                    ნოდარა, ელდარა, ემზარა
+                  </span>
+                </p>
+                <p className='koef'>
+                  1000 X 2
+                </p>
+              </SpinItem>
+            </Spins>
+          </TopSpins>
 
       </HomeSidebar>
     </HomeContainer>
