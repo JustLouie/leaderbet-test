@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import {
   HomeContainer,
+  HomeOverlay,
   HomeGames,
   HomeSidebar,
   GamesNavigation,
@@ -46,11 +47,33 @@ const gameCardData = [
     prize: 5000,
     price: 5,
     maxPlayer: 5,
-  }
+  },
+  {
+    prize: 5000,
+    price: 5,
+    maxPlayer: 5,
+  },
+  {
+    prize: 5000,
+    price: 5,
+    maxPlayer: 5,
+  },
+  {
+    prize: 5000,
+    price: 5,
+    maxPlayer: 5,
+  },
+  {
+    prize: 5000,
+    price: 5,
+    maxPlayer: 5,
+  },
 ]
 
 
 const IndexPage = () => {
+
+
   return (
     <HomeContainer>
       <HomeGames>

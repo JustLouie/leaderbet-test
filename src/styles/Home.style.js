@@ -9,6 +9,16 @@ export const HomeContainer = styled.div`
   padding-bottom: 56px;
 `
 
+export const HomeOverlay = styled.div`
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.48);
+`
+
 export const HomeGames = styled.div`
   width: 100%;
   display: grid;
@@ -71,6 +81,7 @@ export const Games = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 10px;
+  grid-row-gap: 10px;
 `
 
 export const GameCard = styled.div`
@@ -173,20 +184,22 @@ export const InformationNav = styled.div`
 
 export const HomeSidebar = styled.div`
   width: 100%;
-  height: 100px;
-  background: white;
+  height: 100%;
+
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-row-gap: 10px;
+
 `
 
 export const UserInfo = styled.div`
   padding: 60px 24px;
   padding-bottom: 20px;
-  background-color: #3B354A;
+  background-color: #473f5a;
   position: relative;
   display: grid;
   grid-row-gap: 16px;
   justify-items: center;
-
-
   h1 {
     font-size: 16px;
     color: white;
