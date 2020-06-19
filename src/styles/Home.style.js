@@ -37,11 +37,12 @@ export const GamesNavigation = styled.div`
     li {
       float: left;
       height: 100%;
-      button {
-        border: none;
-        outline: none;
+      a {
+        text-decoration: none;
+        display: flex;
         height: 100%;
-        background: none;
+        align-items: center;
+        font-size: 15px;
         color: white;
         padding: 0px 27px;
         text-transform: uppercase;
@@ -49,7 +50,7 @@ export const GamesNavigation = styled.div`
       }
 
       &.active {
-        button {
+        a {
           color: #FFFF00;
           border-bottom: 4px solid #FF00B2;
         }
@@ -149,13 +150,26 @@ export const GameRegistration = styled.button`
 `
 
 export const InformationTable = styled.div`
+  width: 100%;
+  display: grid;
 
 `
 
 export const InformationNav = styled.div`
+  width: 100%;
+  height: auto;
+  ul {
+    list-style: none;
 
-`
-
-export const Table = styled.table`
-
+    li {
+      float: left;
+      margin: 30px 50px;
+      padding-bottom: 18px;
+      a {
+        color: white;
+        font-size: 17px;
+        text-decoration: none;
+      }
+    }
+  }
 `

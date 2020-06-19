@@ -19,22 +19,22 @@ import {
 const gameCardData = [
   {
     prize: 5000,
-    prise: 5,
+    price: 5,
     maxPlayer: 5,
   },
   {
     prize: 5000,
-    prise: 5,
+    price: 5,
     maxPlayer: 5,
   },
   {
     prize: 5000,
-    prise: 5,
+    price: 5,
     maxPlayer: 5,
   },
   {
     prize: 5000,
-    prise: 5,
+    price: 5,
     maxPlayer: 5,
   }
 ]
@@ -47,19 +47,19 @@ const IndexPage = () => {
         <GamesNavigation>
           <ul>
             <li className='active'>
-              <button>
+              <a href=''>
                 All games
-              </button>
+              </a>
             </li>
             <li>
-              <button>
+              <a href=''>
                 Only 3 player
-              </button>
+              </a>
             </li>
             <li>
-              <button>
+              <a href=''>
                 Only 5 Player
-              </button>
+              </a>
             </li>
           </ul>
 
@@ -73,12 +73,12 @@ const IndexPage = () => {
           {
             gameCardData.map(game => (
               <GameCard>
-                <TotalPlayer className='with-dotted-underline'>
-                  ${game.maxPlayer} კაციანი
+                <TotalPlayer className='with-dotted-underline' dotColor='#FFD919'>
+                  {game.maxPlayer} კაციანი
                 </TotalPlayer>
                 <GamePrize>
                   <h2>
-                    <strong>${game.prize}</strong> 
+                    <strong>{game.prize}</strong> 
                     <span>gel</span>
                   </h2>
                   <p>მაქს. მოგება</p>
@@ -91,7 +91,7 @@ const IndexPage = () => {
                   <img src='/img/personblack.svg' />
                 </PlayerNow>
                 <GamePrice>
-                  ${game.price} ლარი
+                  {game.price} ლარი
                 </GamePrice>
                 <GameRegistration>
                   რეგისტრაცია
@@ -105,31 +105,28 @@ const IndexPage = () => {
         <InformationTable>
           <InformationNav>
             <ul>
-              <li>
-                <button>
+              <li className='with-dotted-underline orange'>
+                <a href=''>
                   ტოპ მოგებები
-                </button>
+                </a>
               </li>
               <li>
-                <button>
+                <a href=''>
                   ლიდერბორდი
-                </button>
+                </a>
               </li>
               <li>
-                <button>
+                <a href=''>
                   ისტორია
-                </button>
+                </a>
               </li>
               <li>
-                <button>
+                <a href=''>
                   წესები
-                </button>
+                </a>
               </li>
             </ul>
           </InformationNav>
-          <Table>
-
-          </Table>
         </InformationTable>
       </HomeGames>
       <HomeSidebar>

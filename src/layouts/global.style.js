@@ -28,8 +28,19 @@ export const GlobalStyle = createGlobalStyle`
         position: absolute;
         bottom: -1px;
         right: -10px;
-        background-color: ${props => props.dotColor || '#6FF27B'};
+        background-color: #6FF27B;
       }
+
+      &.orange {
+        &::before {
+          background-color: #6D728E;
+        }
+
+        &::after {
+          background-color: #FFD919;
+        }
+      }
+
     }
   }
 
