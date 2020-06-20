@@ -23,7 +23,7 @@ import {
 import { InfoTable } from 'src/components/Table'
 import GameCard from 'src/components/Widgets/GameCard'
 import GameCardRegistered from 'src/components/Widgets/GameCardRegistered'
-
+import BeginPlayModal from 'src/components/Widgets/BeginPlayModal'
 
 const IndexPage = () => {
 
@@ -35,6 +35,7 @@ const IndexPage = () => {
       {
         registerView && <HomeOverlay />
       }
+      <BeginPlayModal visible={true} />
       <HomeGames>
         <GamesNavigation>
           <ul>
