@@ -57,7 +57,7 @@ export const TotalPlayer = styled.p`
 
 export const GameCardBody = styled.div`
     width: 100%;
-    display: grid;
+    display: ${props => props.beginPlay ? 'flex' : 'grid'};
     grid-template-columns: repeat(2, 233px);
     grid-column-gap: 20px;
     justify-content: center;
@@ -112,11 +112,62 @@ export const GameType = styled(BodyItem)`
     }
 `
 
+export const WaitingPlayers = styled.div`
+    display: grid;
+    grid-row-gap: 26px;
+    justify-items: center;
+    text-align: center;
+    p {
+        color: white;
+        font-size: 20px;
+    }
+`
+
+export const WaitingPlayerNow = styled.div`
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 65px;
+
+    img {
+        width: 37px;
+    }
+
+`
+
+export const WaitingTime = styled.div`
+    width: 314px;
+
+    p {
+        font-size: 14px;
+        color: white;
+        margin-bottom:  15px;
+    }
+
+    .line {
+        width: 100%;
+        height: 3px;
+        background-color: #26C6DF;
+        border-radius: 6px;
+        position: relative;
+
+        .progress {
+            width: 58px;
+            height: 100%;
+            border-radius: 6px;
+            background-color: #17FF4D;
+            position: absolute;
+            top: 0;
+            left: 70%;
+        }
+    }
+
+`
 
 export const GameCardFooter = styled.div`
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
+    justify-items: end;
 
 `
 
@@ -131,7 +182,17 @@ export const GamePlayerNow = styled.div`
     }
 `
 
-export const BeginButton = styled.div`
+export const CancelButton = styled.button`
+    border: none;
+    outline: none;
+    font-size: 19px;
+    color: white;
+    background-color: #1A6F7D;
+    padding: 20px 28px;
+    border-radius: 5px;
+`
+
+export const BeginButton = styled.button`
     border: none;
     outline: none;
     padding: 20px 28px;

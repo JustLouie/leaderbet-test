@@ -10,6 +10,10 @@ import {
     GameCardBody,
     Coeficient,
     GameType,
+    CancelButton,
+    WaitingPlayers,
+    WaitingPlayerNow,
+    WaitingTime,
     GameCardFooter,
     GamePlayerNow,
     BeginButton
@@ -33,27 +37,65 @@ const GameCardRegistered = props => {
                     </GamePrize>
                 </GamePriceWrapper>
             </GameCardHead>
-            <GameCardBody>
-                <Coeficient>
-                    <h2>5X</h2>
-                    <h3>კოეფიციენტი</h3>
-                </Coeficient>
-                <GameType>
-                    <img src='/img/gameType.png' />
-                    <h3>JAMING JARS</h3>
-                </GameType>
+            <GameCardBody beginPlay={data.beginPlay}>
+                {
+                    data.beginPlay ? (
+                        <WaitingPlayers>
+                            <p>გთხოვთ დაელოდოთ მოწინააღდმეგეს</p>
+                            <WaitingPlayerNow>
+                                <img src='/img/person.svg' />
+                                <img src='/img/person.svg' />
+                                <img src='/img/person.svg' />
+                                <img src='/img/personblack.svg' />
+                                <img src='/img/personblack.svg' />
+                            </WaitingPlayerNow>
+                            <WaitingTime>
+                                <p>სავარაუდო მოლოდინის დრო: 30 წამი</p>
+                                <div className='line'>
+                                    <div className='progress' />
+                                </div>
+                            </WaitingTime>
+                        </WaitingPlayers>
+                    ) : (
+                        <>
+                             <Coeficient>
+                                <h2>5X</h2>
+                                <h3>კოეფიციენტი</h3>
+                            </Coeficient>
+                            <GameType>
+                                <img src='/img/gameType.png' />
+                                <h3>JAMING JARS</h3>
+                            </GameType>
+                        </>
+                    )
+                }
+               
             </GameCardBody>
             <GameCardFooter>
-                <GamePlayerNow>
-                    <img src='/img/person.svg' />
-                    <img src='/img/person.svg' />
-                    <img src='/img/person.svg' />
-                    <img src='/img/person.svg' />
-                    <img src='/img/person.svg' />
-                </GamePlayerNow>
-                <BeginButton>
-                    დაწყება
-                </BeginButton>
+                {
+                    data.beginPlay ? (
+                        <CancelButton>
+                            გაუქმება
+                        </CancelButton>
+                    ) : (
+                        <>
+                            <GamePlayerNow>
+                                <img src='/img/person.svg' />
+                                <img src='/img/person.svg' />
+                                <img src='/img/person.svg' />
+                                <img src='/img/person.svg' />
+                                <img src='/img/person.svg' />
+                            </GamePlayerNow>
+                            <BeginButton>
+                                დაწყება
+                            </BeginButton>
+                        </>
+                        
+                    )
+                }
+                
+
+                
             </GameCardFooter>
         </GameCardWrapper>
     )

@@ -5,6 +5,8 @@ const initialState = {
       prize: 5000,
       price: 5,
       maxPlayer: 5,
+      registered: true,
+      beginPlay: false
     },
     {
       id: 1,
