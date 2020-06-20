@@ -2,7 +2,20 @@ import React from 'react'
 
 import {
     CustomTable,
+    HistoryTable
 } from './Table.style'
+
+export const CustomHistoryTable = props => {
+    const { columns, data } = props
+
+    return (
+        <HistoryTable 
+            columns={columns}
+            dataSource={data}
+            pagination={false}
+        />
+    )
+}
 
 const Table = props => {
 

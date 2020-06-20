@@ -1,5 +1,5 @@
 import React from 'react'
-import Table from './Table'
+import Table, { CustomHistoryTable } from './Table'
 import {
     TableTag
 } from './Table.style'
@@ -7,6 +7,7 @@ import {
 const infoTableColumns = [
     {
         title: '',
+        align: 'center',
         dataIndex: 'type',
         key: 'type',
         className: 'type',
@@ -18,11 +19,13 @@ const infoTableColumns = [
     },
     {
         title: 'ნომერი',
+        align: 'center',
         dataIndex: 'number',
         key: 'number'
     },
     {
         title: 'დრო',
+        align: 'center',
         dataIndex: 'time',
         key: 'time',
         render: (time) => {
@@ -36,6 +39,7 @@ const infoTableColumns = [
     },
     {
         title: 'კოეფიციენტი',
+        align: 'center',
         dataIndex: 'koeficient',
         key: 'koeficient',
         key: 'winedPrice',
@@ -49,6 +53,7 @@ const infoTableColumns = [
     },
     {
         title: 'მომხმარებელი',
+        align: 'center',
         dataIndex: 'user',
         key: 'user',
         render: (user) => {
@@ -62,6 +67,7 @@ const infoTableColumns = [
     },
     {
         title: 'მოგებული თანხა',
+        align: 'center',
         dataIndex: 'winedPrice',
         key: 'winedPrice',
         render: (price) => {
@@ -73,6 +79,62 @@ const infoTableColumns = [
         }
     }
 ]
+
+
+const historyTableColumns = [
+    {
+        title: 'თარიღი',
+        align: 'center',
+        dataIndex: 'date',
+        key: 'date'
+    },
+    {
+        title: 'ღირებუ.ი',
+        align: 'center',
+        dataIndex: 'price',
+        key: 'price'
+    },
+    {
+        title: 'რა Xი',
+        align: 'center',
+        dataIndex: 'rate',
+        key: 'rate'
+    },
+    {
+        title: 'რაოდენობა',
+        align: 'center',
+        dataIndex: 'quantity',
+        key: 'quantity'
+    },
+    {
+        title: 'მონაწილეები',
+        dataIndex: 'players',
+        key: 'players',
+        width: 250,
+        className: 'players',
+        render: (user) => {
+            return (
+                <>
+                    <img src='/img/person.svg' />
+                    {user}
+                </>
+            )
+        }
+    },
+    {
+        title: 'ადგილიი',
+        align: 'center',
+        dataIndex: 'place',
+        key: 'place'
+    },
+    {
+        title: 'მოგებული',
+        align: 'center',
+        dataIndex: 'win',
+        key: 'win'
+    }
+]
+
 
 const infoTableData = [
     {
@@ -117,11 +179,64 @@ const infoTableData = [
     }
 ]
 
+const historyTableData = [
+    {
+        date: '23 იანვ.',
+        price: '2 ლარი',
+        rate: '100X',
+        quantity: '5 კაციანი',
+        players: 'ნოდარა, ელდარა, ემზარა, ზაირა, მერაბა',
+        place: '10',
+        win: '5000 ლარი'
+    },
+    {
+        date: '23 იანვ.',
+        price: '2 ლარი',
+        rate: '100X',
+        quantity: '5 კაციანი',
+        players: 'ნოდარა, ელდარა, ემზარა, ზაირა, მერაბა',
+        place: '10',
+        win: '5000 ლარი'
+    },
+    {
+        date: '23 იანვ.',
+        price: '2 ლარი',
+        rate: '100X',
+        quantity: '5 კაციანი',
+        players: 'ნოდარა, ელდარა, ემზარა, ზაირა, მერაბა',
+        place: '10',
+        win: '5000 ლარი'
+    },
+    {
+        date: '23 იანვ.',
+        price: '2 ლარი',
+        rate: '100X',
+        quantity: '5 კაციანი',
+        players: 'ნოდარა, ელდარა, ემზარა, ზაირა, მერაბა',
+        place: '10',
+        win: '5000 ლარი'
+    },
+    {
+        date: '23 იანვ.',
+        price: '2 ლარი',
+        rate: '100X',
+        quantity: '5 კაციანი',
+        players: 'ნოდარა, ელდარა, ემზარა, ზაირა, მერაბა',
+        place: '10',
+        win: '5000 ლარი'
+    }
+]
+
 export const InfoTable = () => {
     return (
         <Table columns={infoTableColumns} data={infoTableData} />
     )
 }
 
+export const HistoryTable = () => {
+    return (
+        <CustomHistoryTable columns={historyTableColumns} data={historyTableData} />
+    )
+}
 
 export default Table

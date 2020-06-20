@@ -53,6 +53,43 @@ export const CustomTable = styled(Table)`
     }
 `
 
+export const HistoryTable = styled(CustomTable)`
+
+    .ant-table {
+        background-color: transparent;
+    }
+
+    table {
+        thead {
+            th {
+                background-color: transparent;
+            }
+        }
+    
+        tbody {
+            td {
+                background-color: #444563;
+            }
+            tr {
+                border-radius: 5px;
+                margin-bottom: 1px;
+            }
+    
+            .players {
+                display: flex;
+            }
+    
+            tr:nth-child(2n-1) {
+                td {
+                    background-color: #444563;
+                }
+            }
+        }
+    }
+    
+`
+
+
 export const TableTag = styled.p`
     color: #FFD919;
     padding: 5px 14px;
