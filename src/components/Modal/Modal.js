@@ -17,7 +17,7 @@ const Modal = props => {
         <CustomModal
             {...R.omit(['visible', 'onCancel', 'footer', 'closeIcon'], props)}
             footer={null}
-            closeIcon={<img src='/img/close.svg' />}
+            closeIcon={props.closeIcon || <img src='/img/close.svg' />}
             onCancel={() => { setVisible(false) }}
             visible={visible}
         >

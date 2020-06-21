@@ -25,6 +25,7 @@ import GameCard from 'src/components/Widgets/GameCard'
 import GameCardRegistered from 'src/components/Widgets/GameCardRegistered'
 import BeginPlayModal from 'src/components/Widgets/BeginPlayModal'
 import HistoryModal from 'src/components/Widgets/HistoryModal'
+import CongratsModal from 'src/components/Widgets/CongratsModal'
 
 const IndexPage = () => {
 
@@ -41,6 +42,7 @@ const IndexPage = () => {
       }
       <BeginPlayModal visible={beginPlayRequest} data={requestedGame || {}} />
       <HistoryModal visible={historyModal} />
+      <CongratsModal visible={true} type='first' />
       <HomeGames>
         <GamesNavigation>
           <ul>
