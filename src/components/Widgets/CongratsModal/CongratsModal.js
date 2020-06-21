@@ -6,7 +6,15 @@ import {
     FirstPlaceInfo,
     FirstPlacePrize,
     FirstPlaceActions,
-    CloseButton
+    CloseButton,
+    PlayerPlacesModal,
+    PlayerPlacesWrapper,
+    PrizeFond,
+    Place,
+    PlaceNumber,
+    PlaceUser,
+    PlaceUserCoins,
+    PlaceItem
 } from './CongratsModal.style'
 
 const CongratsModal = props => {
@@ -44,7 +52,96 @@ const CongratsModal = props => {
         )
     }
 
-    return null
+    return (
+        <PlayerPlacesModal visible={visible} closable={false}>
+            <PlayerPlacesWrapper>
+                <PrizeFond>
+                    <img src='/img/logo.svg' />
+                    <h3>
+                        <strong>5000</strong>
+                        <span>GEL</span>
+                    </h3>
+                    <p>საპრიზო ფონდი</p>
+                </PrizeFond>
+                <Place>
+                    <h3>
+                        <img src='/img/reward.svg' />
+                        ლიდერბორდი
+                    </h3>
+                    <PlaceItem>
+                        <PlaceNumber>1</PlaceNumber>
+                        <PlaceUser>
+                            <h4>
+                                <img src='/img/personblack.svg' />
+                                Alberto
+                            </h4>
+                            <p>322145</p>
+                        </PlaceUser>
+                        <PlaceUserCoins>
+                            3264
+                            <span>COIN</span>
+                        </PlaceUserCoins>
+                    </PlaceItem>
+                    <PlaceItem>
+                        <PlaceNumber>2</PlaceNumber>
+                        <PlaceUser>
+                            <h4>
+                                <img src='/img/personblack.svg' />
+                                Alberto
+                            </h4>
+                            <p>322145</p>
+                        </PlaceUser>
+                        <PlaceUserCoins>
+                            3264
+                            <span>COIN</span>
+                        </PlaceUserCoins>
+                    </PlaceItem>
+                    <PlaceItem>
+                        <PlaceNumber>3</PlaceNumber>
+                        <PlaceUser>
+                            <h4>
+                                <img src='/img/personblack.svg' />
+                                Alberto
+                            </h4>
+                            <p>322145</p>
+                        </PlaceUser>
+                        <PlaceUserCoins>
+                            3264
+                            <span>COIN</span>
+                        </PlaceUserCoins>
+                    </PlaceItem>
+                    <PlaceItem className='active'>
+                        <PlaceNumber>4</PlaceNumber>
+                        <PlaceUser>
+                            <h4>
+                                <img src='/img/personblack.svg' />
+                                Alberto
+                            </h4>
+                            <p>322145</p>
+                        </PlaceUser>
+                        <PlaceUserCoins>
+                            3264
+                            <span>COIN</span>
+                        </PlaceUserCoins>
+                    </PlaceItem>
+                    <PlaceItem>
+                        <PlaceNumber>5</PlaceNumber>
+                        <PlaceUser>
+                            <h4>
+                                <img src='/img/personblack.svg' />
+                                Alberto
+                            </h4>
+                            <p>322145</p>
+                        </PlaceUser>
+                        <PlaceUserCoins>
+                            3264
+                            <span>COIN</span>
+                        </PlaceUserCoins>
+                    </PlaceItem>
+                </Place>
+            </PlayerPlacesWrapper>
+        </PlayerPlacesModal>
+    )
 }
 
 export default CongratsModal
