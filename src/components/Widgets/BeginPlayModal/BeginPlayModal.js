@@ -1,4 +1,6 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { beginPlay } from 'src/actions/mainActions'
 
 import {
     BeginPlayWrapper,
@@ -16,6 +18,8 @@ import {
 import Modal from 'src/components/Modal'
 
 const BeginPlayModal = props => {
+    const { data } = props
+    const dispatch = useDispatch()
     return (
         <Modal visible={props.visible}>
             <BeginPlayWrapper>
@@ -85,7 +89,7 @@ const BeginPlayModal = props => {
                     </GameInfo>
 
                     <GameActions>
-                        <BeginButton>
+                        <BeginButton onClick={() => beginPlay(data.id, dispatch)}>
                             დაწყება
                         </BeginButton>
                     </GameActions>

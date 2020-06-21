@@ -73,4 +73,5 @@ export const GameRegistration = styled.button`
   background-color: #764ED4;
   color: white;
   font-size: 19px;
+  cursor: pointer;
 `

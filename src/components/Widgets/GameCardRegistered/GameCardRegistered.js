@@ -1,4 +1,6 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { beginPlayRequest, cancelGame } from 'src/actions/mainActions'
 
 import {
     GameCardWrapper,
@@ -21,6 +23,8 @@ import {
 
 const GameCardRegistered = props => {
     const { data } = props
+    const dispatch = useDispatch()
+    console.log(data)
     return (
         <GameCardWrapper>
             <GameCardHead>
@@ -74,7 +78,7 @@ const GameCardRegistered = props => {
             <GameCardFooter>
                 {
                     data.beginPlay ? (
-                        <CancelButton>
+                        <CancelButton onClick={() => cancelGame(dispatch)}>
                             გაუქმება
                         </CancelButton>
                     ) : (
@@ -86,7 +90,7 @@ const GameCardRegistered = props => {
                                 <img src='/img/person.svg' />
                                 <img src='/img/person.svg' />
                             </GamePlayerNow>
-                            <BeginButton>
+                            <BeginButton onClick={() => beginPlayRequest(data.id, dispatch)}>
                                 დაწყება
                             </BeginButton>
                         </>

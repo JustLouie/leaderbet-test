@@ -148,4 +148,5 @@ export const BeginButton = styled.button`
     color: white;
     font-size: 19px;
     border-radius: 5px;
+    cursor: pointer;
 `

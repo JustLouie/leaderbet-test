@@ -29,15 +29,18 @@ import HistoryModal from 'src/components/Widgets/HistoryModal'
 const IndexPage = () => {
 
   const state = useSelector(state => state.home)
-  const { cards, registerView } = state
 
+  const [ historyModal, setHistoryModal ] = useState(false)
+
+  const { cards, registerView, beginPlayRequest, requestedGame } = state
+  
   return (
     <HomeContainer>
       {
         registerView && <HomeOverlay />
       }
-      <BeginPlayModal visible={true} />
-      <HistoryModal visible={true} />
+      <BeginPlayModal visible={beginPlayRequest} data={requestedGame || {}} />
+      <HistoryModal visible={historyModal} />
       <HomeGames>
         <GamesNavigation>
           <ul>
@@ -113,7 +116,7 @@ const IndexPage = () => {
       <HomeSidebar>
 
           <UserInfo>
-            <UserHistory>
+            <UserHistory onClick={() => setHistoryModal(true)}>
               <img src='/img/time.svg' />
               ისტორია
             </UserHistory>

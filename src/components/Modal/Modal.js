@@ -11,7 +11,7 @@ const Modal = props => {
 
     useEffect(() => {
         setVisible(props.visible)
-    }, props.visible)
+    }, [props.visible])
 
     return (
         <CustomModal

@@ -1,4 +1,6 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { registerGame } from 'src/actions/mainActions'
 
 import {
     GameCardWrapper,
@@ -11,6 +13,7 @@ import {
 
 const GameCard = props => {
     const { data } = props
+    const dispatch = useDispatch()
     return (
         <GameCardWrapper isRegistered={data.registered}>
             <TotalPlayer className='with-dotted-underline' dotColor='#FFD919'>
@@ -33,7 +36,7 @@ const GameCard = props => {
             <GamePrice>
                 {data.price} ლარი
             </GamePrice>
-            <GameRegistration>
+            <GameRegistration onClick={() => registerGame(data.id, dispatch)}>
                 რეგისტრაცია
             </GameRegistration>
         </GameCardWrapper>

@@ -190,6 +190,7 @@ export const CancelButton = styled.button`
     background-color: #1A6F7D;
     padding: 20px 28px;
     border-radius: 5px;
+    cursor: pointe;
 `
 
 export const BeginButton = styled.button`
@@ -200,5 +201,5 @@ export const BeginButton = styled.button`
     color: white;
     font-size: 19px;
     border-radius: 5px;
-    
+    cursor: pointer;
 `

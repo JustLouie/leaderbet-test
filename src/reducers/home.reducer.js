@@ -1,3 +1,5 @@
+import { REGISTER_GAME, BEGIN_PLAY_REQUEST, BEGIN_PLAY, CANCEL_GAME } from 'src/actions/mainActions'
+
 const initialState = {
   cards: [
     {
@@ -5,8 +7,6 @@ const initialState = {
       prize: 5000,
       price: 5,
       maxPlayer: 5,
-      registered: true,
-      beginPlay: false
     },
     {
       id: 1,
@@ -51,12 +51,62 @@ const initialState = {
       maxPlayer: 5,
     },
   ],
-  registerView: false
+  registerView: false,
+  requestedGame: null,
+  beginPlayRequest: false,
+
+}
+
+
+const setGameActions = (data, which, key, value) => {
+  return data.map(item => {
+    if (item.id === which) {
+      return {
+        ...item,
+        [key]: value
+      }
+    }
+
+    return {
+      ...item,
+      [key]: null
+    }
+  })
+}
+
+const disableGameActions = (data) => {
+  return data.map(item => {
+    return { ...item, registered: null, beginPlay: null }
+  })
 }
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-
+    case REGISTER_GAME:
+      return {
+        ...state,
+        cards: setGameActions(state.cards, action.payload, 'registered', true),
+        registerView: true
+      }
+    case BEGIN_PLAY_REQUEST:
+      const requestedGame = state.cards.find(item => item.id === action.payload)
+      return {
+        ...state,
+        registerView: false,
+        requestedGame,
+        beginPlayRequest: true
+      }
+    case BEGIN_PLAY:
+      return {
+        ...state,
+        cards: setGameActions(state.cards, action.payload, 'beginPlay', true),
+        beginPlayRequest: false
+      }
+    case CANCEL_GAME:
+      return {
+        ...state,
+        cards: disableGameActions(state.cards),
+      }
     default:
         return state
   }
