@@ -51,6 +51,7 @@ export const FirstPlacePrize = styled.div`
         color: #FFFF00;
         margin: 0px;
         line-height: 40px;
+        font-family: Firago-Bold;
         span {
             font-size: 13px;
             text-transform: uppercase;

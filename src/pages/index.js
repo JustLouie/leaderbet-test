@@ -42,7 +42,7 @@ const IndexPage = () => {
       }
       <BeginPlayModal visible={beginPlayRequest} data={requestedGame || {}} />
       <HistoryModal visible={historyModal} />
-      <CongratsModal visible={true}  />
+      <CongratsModal visible={false}  />
       <HomeGames>
         <GamesNavigation>
           <ul>
